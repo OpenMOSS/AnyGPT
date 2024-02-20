@@ -2,9 +2,9 @@
 
 
 ## Open-Source Checklist
-- [ ] Inference Code
 - [ ] Pretraining Model
 - [ ] Instruction Model
+- [ ] Inference Code
 - [ ] Instruction Dataset
 
 ## Example Demonstrations
