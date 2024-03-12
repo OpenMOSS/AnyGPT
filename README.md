@@ -22,3 +22,14 @@ Demos are shown in [project page](https://junzhan2000.github.io/AnyGPT.github.io
 - [ ] Instruction Model
 - [ ] Inference Code
 - [x] Instruction Dataset
+
+## Citation
+If you find AnyGPT and AnyInstruct useful in your research or applications, please kindly cite:
+```
+@article{zhan2024anygpt,
+  title={AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling},
+  author={Zhan, Jun and Dai, Junqi and Ye, Jiasheng and Zhou, Yunhua and Zhang, Dong and Liu, Zhigeng and Zhang, Xin and Yuan, Ruibin and Zhang, Ge and Li, Linyang and others},
+  journal={arXiv preprint arXiv:2402.12226},
+  year={2024}
+}
+```
