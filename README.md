@@ -23,6 +23,55 @@ Demos are shown in [project page](https://junzhan2000.github.io/AnyGPT.github.io
 - [ ] Inference Code
 - [x] Instruction Dataset
 
+## Talk with AnyGPT
+
+### Installation
+
+```bash
+git clone https://github.com/OpenMOSS/AnyGPT.git
+cd AnyGPT
+conda create --name AnyGPT python=3.9
+conda activate AnyGPT
+pip install -r requirements.txt
+```
+
+### Download
+To talk with SpeechGPT, you should download [SpeechGPT-7B-cm](https://huggingface.co/fnlp/SpeechGPT-7B-cm) and [SpeechGPT-7B-com](https://huggingface.co/fnlp/SpeechGPT-7B-com) locally.
+
+You should download mHuBERT model to ```utils/speech2unit/```. Please see [Speech2unit](https://github.com/0nutation/SpeechGPT/blob/main/speechgpt/utils/speech2unit/README.md) for details.
+```bash
+s2u_dir="uitls/speech2unit"
+cd ${s2u_dir}
+wget https://dl.fbaipublicfiles.com/hubert/mhubert_base_vp_en_es_fr_it3.pt
+wget https://dl.fbaipublicfiles.com/hubert/mhubert_base_vp_en_es_fr_it3_L11_km1000.bin
+```
+
+You should download the unit-vocoder to ```utils/vocoder/```. Please see [vocoder](https://github.com/0nutation/SpeechGPT/blob/main/speechgpt/utils/vocoder/README.md) for details.
+```bash
+vocoder_dir="utils/vocoder/"
+cd ${vocoder_dir}
+wget https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/vocoder/code_hifigan/mhubert_vp_en_es_fr_it3_400k_layer11_km1000_lj/config.json -O config.json
+wget https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/vocoder/code_hifigan/mhubert_vp_en_es_fr_it3_400k_layer11_km1000_lj/g_00500000 -O vocoder.pt
+```
+
+### CLI Inference
+```bash
+python3 speechgpt/src/infer/cli_infer.py \
+--model-name-or-path "path/to/SpeechGPT-7B-cm" \
+--lora-weights "path/to/SpeechGPT-7B-com" \
+--s2u-dir "${s2u_dir}" \
+--vocoder-dir "${vocoder_dir} \
+--output-dir "output" 
+```
+**Notes:**
+For speech input, you can provide the path to the audio file. For ASR or TTS tasks, you must prefix the speech or text with ```this is input: ```,  otherwise, it may be recognized incorrectly.
+The speech response will be saved to a ```.wav``` file, and detailed responses will be saved in a JSON file. The paths to these files will be indicated in the response.
+
+Here are some examples of talking with SpeechGPT:
+
+**Textual dialogue example**
+
+
 ## Citation
 If you find AnyGPT and AnyInstruct useful in your research or applications, please kindly cite:
 ```

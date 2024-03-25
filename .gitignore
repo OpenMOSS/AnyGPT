@@ -2,3 +2,4 @@
 infer_output/*
 models/*
 anygpt/seed/*
+.gitignore
