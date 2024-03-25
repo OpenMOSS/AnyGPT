@@ -1,0 +1,10 @@
+{
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "do_sample": true,
+    "max_new_tokens": 500,
+    "min_new_tokens": 10,
+    "repetition_penalty": 1.0,
+    "vc_steps": 3,
+    "num_beams": 5
+}
