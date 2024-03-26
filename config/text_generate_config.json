@@ -1,0 +1,6 @@
+{
+    "do_sample": false,
+    "max_new_tokens": 100,
+    "min_new_tokens": 10,
+    "num_beams": 5
+}

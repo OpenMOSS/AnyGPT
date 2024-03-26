@@ -1,0 +1,8 @@
+{
+    "temperature": 1,
+    "top_p":  0.5,
+    "do_sample": true, 
+    "max_new_tokens": 200,
+    "min_new_tokens": 10
+}
+
