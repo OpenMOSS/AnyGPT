@@ -108,7 +108,11 @@ The speech and music response will be saved to ```.wav``` files, and the image r
 
 
 ## Acknowledgements
-- [SpeechGPT](https://github.com/0nutation/SpeechGPT/tree/main/speechgpt), [Vicuna](https://github.com/lm-sys/FastChat), [soundstorm-speechtokenizer](https://github.com/ZhangXInFD/soundstorm-speechtokenizer), [SEED](https://github.com/AILab-CVC/SEED), [Stable Diffusion](https://github.com/CompVis/stable-diffusion):The codebase we built upon.
+- [SpeechGPT](https://github.com/0nutation/SpeechGPT/tree/main/speechgpt), [Vicuna](https://github.com/lm-sys/FastChat): The codebase we built upon.
+- We thank the great work from [SpeechTokenizer](https://github.com/ZhangXInFD/SpeechTokenizer),[soundstorm-speechtokenizer](https://github.com/ZhangXInFD/soundstorm-speechtokenizer), [SEED-tokenizer](https://github.com/AILab-CVC/SEED),
+
+## Lincese
+`AnyGPT` is released under the original [License](https://ai.meta.com/resources/models-and-libraries/llama-downloads/) of [LLaMA2](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf).
 
 ## Citation
 If you find AnyGPT and AnyInstruct useful in your research or applications, please kindly cite:
