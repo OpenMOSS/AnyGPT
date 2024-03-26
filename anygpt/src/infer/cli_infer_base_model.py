@@ -284,6 +284,7 @@ class AnyGPTInference:
         # print("response: ", response)
         if to_modality == "text":
             response = extract_text_between_tags(response, tag1=f"{chatbot_name} : ", tag2="<eos>").strip()
+            print("results: ", response)
         else:
             self.postprocess(response, to_modality, input_data, voice_prompt)
         return response
@@ -304,7 +305,6 @@ class AnyGPTInference:
                 # if not provided, use the random voice prompt
                 voice_prompt = None
         response = self.response(modality, to_modality, input_data, voice_prompt)
-        print("\nresponse:\n", response)
         
     def __call__(self, input):
         return self.forward(input)
