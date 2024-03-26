@@ -4,7 +4,8 @@ from .soundstorm import (
     Conformer
 )
 from .trainer import (
-    SoundStormTrainer
+    SoundStormTrainer,
+    Semantic2AcousticTrainer
 )
 
 from .dataset import (

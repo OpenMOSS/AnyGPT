@@ -51,7 +51,7 @@ class SoundStormDataset(Dataset):
                  file_list: list,
                  is_raw_wav: bool=False,
                  is_tokens: bool=False,
-                 tokenizer: Optional[SpeechTokenizer]=None,
+                 tokenizer=None,
                  sample_rate: int= 16000,
                  st_cfg: Optional[str] = None,
                  st_ckpt: Optional[str] = None,
@@ -113,4 +113,38 @@ class SoundStormDataset(Dataset):
         semantic_tokens = tokens[0].squeeze()
         acoustic_tokens = rearrange(tokens[1:], 'q b n -> b n q').squeeze()
         return semantic_tokens, acoustic_tokens
+    
+class Semantic2AcousticDataset(Dataset):
+    
+    @beartype
+    def __init__(self, 
+                 file_list: list,
+                 audio_root: str,
+                 sample_rate: int= 16000,
+                 max_sequence: int=512,
+                 device = 'cpu'):
+        self.audio_root = audio_root
+        self.file_list = file_list
+        self.sample_rate = sample_rate
+        self.max_sequence = max_sequence
+        self.device = device
         
+    def __len__(self):
+        return len(self.file_list)
+    
+    def __getitem__(self, index):
+        file = self.file_list[index].strip()
+        file_name, units = file.split('\t')
+        units = torch.from_numpy(np.array(units.split(' ')).astype(int))
+        spk, chapter = file_name.split('_')[:2]
+        wav_file = f'{self.audio_root}/{spk}/{chapter}/{file_name}.flac'
+        wav, sr = torchaudio.load(wav_file)
+        if sr != self.sample_rate:
+            wav = torchaudio.functional.resample(wav, sr, self.sample_rate)
+        wav = wav.mean(axis=0)
+        wav = wav.unsqueeze(0)
+        if units.size(-1) > self.max_sequence:
+            start = torch.randint(0, units.size(-1) - self.max_sequence, (1,))
+            units = units[start:(start + self.max_sequence)]
+            wav = wav[:, (start * 320): (start + self.max_sequence)*320]
+        return units, wav[:, :self.max_sequence * 320].squeeze(0), min(units.size(-1), self.max_sequence)

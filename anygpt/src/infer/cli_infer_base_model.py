@@ -255,10 +255,10 @@ class AnyGPTInference:
         return response     
     
     def response(self, modality, to_modality, input_data, voice_prompt=None):
-        print(f"modality: {modality}, to_modality: {to_modality}, input_data: {input_data}")
+        # print(f"modality: {modality}, to_modality: {to_modality}, input_data: {input_data}")
         preprocessed_prompts = (self.preprocess(input_data=input_data, modality=modality,
                                                 to_modality=to_modality))
-        print("preprocessed_prompts: ", preprocessed_prompts)
+        # print("preprocessed_prompts: ", preprocessed_prompts)
         input_ids = self.tokenizer(preprocessed_prompts, return_tensors="pt", padding=True).input_ids
         input_ids = input_ids.to(self.device)
         config_path='config/text_generate_config.json'
@@ -281,7 +281,7 @@ class AnyGPTInference:
             )
         generated_ids = generated_ids.sequences
         response = self.tokenizer.batch_decode(generated_ids.cpu(), skip_special_tokens=True)[0]
-        print("response: ", response)
+        # print("response: ", response)
         if to_modality == "text":
             response = extract_text_between_tags(response, tag1=f"{chatbot_name} : ", tag2="<eos>").strip()
         else:
@@ -331,8 +331,8 @@ if __name__=='__main__':
     parser.add_argument("--output-dir", type=str, default="infer_output/base")
     
     args = parser.parse_args()
-    
-    os.makedirs(args.output_dir, exist_ok=True)
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir, exist_ok=True)
 
     infer = AnyGPTInference(
         model_name_or_path=args.model_name_or_path,
