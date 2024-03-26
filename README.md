@@ -100,7 +100,7 @@ We can perform inference following a specific instruction format.
 
 **Notes**
 
-For different tasks, we used various language model decoding strategies. The decoding configuration files for image, speech, and music generation are located in ```config/image_generate_config.json```, ```config/speech_generate_config.json```, and ```config/music_generate_config.json```, respectively. The decoding configuration files for other modalities to text are in ```config/text_generate_config.json```. You can directly modify or add parameters to change the decoding strategy.
+For different tasks, we used different language model decoding strategies. The decoding configuration files for image, speech, and music generation are located in ```config/image_generate_config.json```, ```config/speech_generate_config.json```, and ```config/music_generate_config.json```, respectively. The decoding configuration files for other modalities to text are in ```config/text_generate_config.json```. You can directly modify or add parameters to change the decoding strategy.
 
 Due to limitations in data and training resources, the model's generation may still be unstable. You can generate multiple times or try different decoding strategies.
 
