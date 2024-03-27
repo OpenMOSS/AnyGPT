@@ -183,4 +183,3 @@ class LayerNorm(nn.LayerNorm):
         ret = super().forward(x.type(torch.float32))
         return ret.type(orig_type)
 
-

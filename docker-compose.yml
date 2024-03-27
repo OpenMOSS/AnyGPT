@@ -1,0 +1,21 @@
+version: '3'
+services:
+  anygpt:
+    image: anygpt
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - ./.cache:/root/.cache
+      
+    env_file:
+      - .env
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
