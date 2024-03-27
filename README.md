@@ -2,8 +2,14 @@
 <a href='https://junzhan2000.github.io/AnyGPT.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>  <a href='https://arxiv.org/pdf/2402.12226.pdf'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> [![](https://img.shields.io/badge/Datasets-AnyInstruct-yellow)](https://huggingface.co/datasets/fnlp/AnyInstruct)
 
 <p align="center">
-    <img src="static/images/logo.png" width="16%"> <br>
+    <img src="https://raw.githubusercontent.com/OpenMOSS/AnyGPT/main/static/images/logo.png" width="16%"> <br>
 </p>
+
+<div align="center">
+
+ | [日本語](docs/README_JP.md) | [English](README.md) |
+
+</div>
 
 ## Introduction
 We introduce AnyGPT, an any-to-any multimodal language model that utilizes discrete representations for the unified processing of various modalities, including speech, text, images, and music. The [base model](https://huggingface.co/fnlp/AnyGPT-base) aligns the four modalities, allowing for intermodal conversions between different modalities and text. Furthermore, we constructed the [AnyInstruct](https://huggingface.co/datasets/fnlp/AnyInstruct) dataset based on various generative models, which contains instructions for arbitrary modal interconversion. Trained on this dataset, our [chat model](https://huggingface.co/fnlp/AnyGPT-chat) can engage in free multimodal conversations, where multimodal data can be inserted at will.
@@ -36,7 +42,7 @@ pip install -r requirements.txt
 ### Model Weights
 * Check the AnyGPT-base weights in [fnlp/AnyGPT-base](https://huggingface.co/fnlp/AnyGPT-base)
 * Check the AnyGPT-chat weights in [fnlp/AnyGPT-chat](https://huggingface.co/fnlp/AnyGPT-chat)
-* Check the SpeechTokenizer and Soundstorm weights in [fnlp/AnyGPT-speech-modules](https://huggingface.co/fnlp/AnyGPT-base)
+* Check the SpeechTokenizer and Soundstorm weights in [fnlp/AnyGPT-speech-modules](https://huggingface.co/fnlp/AnyGPT-speech-modules)
 * Check the SEED tokenizer weights in [AILab-CVC/seed-tokenizer-2](https://huggingface.co/AILab-CVC/seed-tokenizer-2)
 
 
@@ -45,6 +51,10 @@ The SpeechTokenizer is used for tokenizing and reconstructing speech, Soundstorm
 The model weights of unCLIP SD-UNet which are used to reconstruct the image, and Encodec-32k which are used to tokenize and reconstruct music will be downloaded automatically.
 
 ### Base model CLI Inference
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13_gZPIRG6ShkAbI76-hC_etvfGhry0DZ?usp=sharing)
+
+
 ```bash
 python anygpt/src/infer/cli_infer_base_model.py \
 --model-name-or-path "path/to/AnyGPT-7B-base" \
