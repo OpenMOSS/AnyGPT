@@ -4,7 +4,7 @@ import sys
 sys.path.append("/mnt/petrelfs/zhanjun.p/mllm")
 sys.path.append("/mnt/petrelfs/zhanjun.p/src")
 from transformers import GenerationConfig
-from mmgpt.src.m_utils.prompter_mmgpt import Prompter
+from anygpt.src.m_utils.prompter import Prompter
 from tqdm import tqdm
 
 from m_utils.conversation import get_conv_template
