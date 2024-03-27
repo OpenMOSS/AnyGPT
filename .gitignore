@@ -1,0 +1,5 @@
+*.DS_Store
+infer_output/*
+models/*
+anygpt/seed/*
+.gitignore
