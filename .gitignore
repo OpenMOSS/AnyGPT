@@ -3,3 +3,4 @@ infer_output/*
 models/*
 anygpt/seed/*
 .gitignore
+**/__pycache__/
