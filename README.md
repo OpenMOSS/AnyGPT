@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ### Model Weights
 * Check the AnyGPT-base weights in [fnlp/AnyGPT-base](https://huggingface.co/fnlp/AnyGPT-base)
 * Check the AnyGPT-chat weights in [fnlp/AnyGPT-chat](https://huggingface.co/fnlp/AnyGPT-chat)
-* Check the SpeechTokenizer and Soundstorm weights in [fnlp/AnyGPT-speech-modules](https://huggingface.co/fnlp/AnyGPT-base)
+* Check the SpeechTokenizer and Soundstorm weights in [fnlp/AnyGPT-speech-modules](https://huggingface.co/fnlp/AnyGPT-speech-modules)
 * Check the SEED tokenizer weights in [AILab-CVC/seed-tokenizer-2](https://huggingface.co/AILab-CVC/seed-tokenizer-2)
 
 
