@@ -17,7 +17,7 @@ Demos are shown in [project page](https://junzhan2000.github.io/AnyGPT.github.io
 
 ## Open-Source Checklist
 - [x] Base Model
-- [ ] Chat Model
+- [x] Chat Model
 - [x] Inference Code
 - [x] Instruction Dataset
 
@@ -48,7 +48,7 @@ The model weights of unCLIP SD-UNet which are used to reconstruct the image, and
 ```bash
 python anygpt/src/infer/cli_infer_base_model.py \
 --model-name-or-path "path/to/AnyGPT-7B-base" \
---image-tokenizer-path models/seed-tokenizer-2/seed_quantizer.pt \
+--image-tokenizer-path 'path/to/model' \
 --speech-tokenizer-path "path/to/model" \
 --speech-tokenizer-config "path/to/config" \
 --soundstorm-path "path/to/model" \
@@ -105,6 +105,41 @@ For different tasks, we used different language model decoding strategies. The d
 Due to limitations in data and training resources, the model's generation may still be unstable. You can generate multiple times or try different decoding strategies.
 
 The speech and music response will be saved to ```.wav``` files, and the image response will be saved to a ```jpg```. The filename will be a concatenation of the prompt and the time. The paths to these files will be indicated in the response.
+
+### Chat model CLI Inference
+```bash
+python anygpt/src/infer/cli_infer_chat_model.py 
+\ --model-name-or-path 'path/to/model'
+\ --image-tokenizer-path 'path/to/model'
+\ --speech-tokenizer-path 'path/to/model'
+\ --speech-tokenizer-config 'path/to/config'
+\ --soundstorm-path 'path/to/model'
+\ --output-dir "infer_output/chat"
+```
+for example
+```bash
+python anygpt/src/infer/cli_infer_chat_model.py 
+\ --model-name-or-path models/anygpt/chat
+\ --image-tokenizer-path models/seed-tokenizer-2/seed_quantizer.pt 
+\ --speech-tokenizer-path models/speechtokenizer/ckpt.dev 
+\ --speech-tokenizer-config models/speechtokenizer/config.json 
+\ --soundstorm-path models/soundstorm/speechtokenizer_soundstorm_mls.pt 
+\ --output-dir "infer_output/chat"
+```
+
+Instruct format
+```bash
+interleaved|{text_instruction}|{modality}|{image_path}|{voice_prompt}|{speech_instruction}|{music_path}
+```
+Where ```text_instruction``` is the input text command, ```speech_instruction``` is the input voice command; only one needs to be specified. 
+```image_path``` and ```music_path``` are the paths for the input image and music, respectively. ```voice_prompt``` is the specified tone of the model's response; if not specified, a random tone is used. 
+```modality``` refers to the type of output modality, which can be chosen as speech, image, or music; otherwise, it is considered as text. This will only affect which decoding configuration file under the config directory is used by the model (this is because the model's training is limited, leading to different decoding strategies for different modalities). It can also decode token by token, modifying the decoding strategy to the corresponding modality when generating the start token of the modality.
+
+**example**
+* interleaved||image|||static/infer/speech/instruction/Can you draw me a picture of a sunny beach.wav
+* interleaved||music|||static/infer/speech/instruction/Give me a similar style of music.wav
+
+To clear the conversation history, please input ```|clear```
 
 
 ## Acknowledgements
