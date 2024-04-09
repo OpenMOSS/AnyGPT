@@ -86,7 +86,7 @@ We can perform inference following a specific instruction format.
 * Zero-shot TTS
   * ```text|speech|{speech content}|{voice prompt}```
   * example:
-  ```text|speech|I could be bounded in a nutshell and count myself a king of infinite space.|static/infer/speech/voice_prompt1.wav/voice_prompt3.wav```
+  ```text|speech|I could be bounded in a nutshell and count myself a king of infinite space.|static/infer/speech/voice_prompt3.wav```
 * ASR
   * ```speech|text|{speech file path}```
   * example: ```speech|text|AnyGPT/static/infer/speech/voice_prompt2.wav```

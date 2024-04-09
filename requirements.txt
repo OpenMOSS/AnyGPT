@@ -24,7 +24,6 @@ accelerate
 einops
 sentencepiece
 gradio==3.50.0
-speechtokenizer
-beartype
+beartype==0.16.4
 lion-pytorch
 nemo_text_processing

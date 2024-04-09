@@ -3,7 +3,7 @@
     "top_p":  1.0,
     "top_k": 200,
     "do_sample": true,
-    "max_new_tokens": 1500,
+    "max_new_tokens": 2000,
     "min_new_tokens": 10,
     "repetition_penalty": 1.15
 }
