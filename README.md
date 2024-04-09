@@ -132,7 +132,9 @@ Instruct format
 interleaved|{text_instruction}|{modality}|{image_path}|{voice_prompt}|{speech_instruction}|{music_path}
 ```
 Where ```text_instruction``` is the input text command, ```speech_instruction``` is the input voice command; only one needs to be specified. 
+
 ```image_path``` and ```music_path``` are the paths for the input image and music, respectively. ```voice_prompt``` is the specified tone of the model's response; if not specified, a random tone is used. 
+
 ```modality``` refers to the type of output modality, which can be chosen as speech, image, or music; otherwise, it is considered as text. This will only affect which decoding configuration file under the config directory is used by the model (this is because the model's training is limited, leading to different decoding strategies for different modalities). It can also decode token by token, modifying the decoding strategy to the corresponding modality when generating the start token of the modality.
 
 **example**
