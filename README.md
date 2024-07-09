@@ -143,6 +143,8 @@ Where ```text_instruction``` is the input text command, ```speech_instruction```
 
 To clear the conversation history, please input ```|clear```
 
+### Pretraining and SFT
+Please refer to ```scripts/cli_infer_chat_model.sh``` and ```scripts/cli_infer_chat_model.sh```
 
 ## Acknowledgements
 - [SpeechGPT](https://github.com/0nutation/SpeechGPT/tree/main/speechgpt), [Vicuna](https://github.com/lm-sys/FastChat): The codebase we built upon.
