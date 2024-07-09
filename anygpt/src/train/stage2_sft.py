@@ -1,6 +1,6 @@
 # stage1: visual continue pretrain
 import sys
-sys.path.append('mmgpt/src')
+sys.path.append('anygpt/src')
 from fastchat.train.llama2_flash_attn_monkey_patch import (
     replace_llama_attn_with_flash_attn,
 )
@@ -34,7 +34,7 @@ IGNORE_TOKEN_ID=-100
 @dataclass
 class ModelArguments:
     model_name_or_path: Optional[str] = field(
-        default="/mnt/petrelfs/share_data/llama2_hf/llama-2-7b-hf",
+        default="share_data/llama2_hf/llama-2-7b-hf",
         metadata={
             "help": (
                 "The model checkpoint for weights initialization.Don't set if you want to train a model from scratch."

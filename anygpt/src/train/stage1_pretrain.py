@@ -32,7 +32,7 @@ not_twoway_datasets = ['laion2b', 'laion-coco', 'mls']
 @dataclass
 class ModelArguments:
     model_name_or_path: Optional[str] = field(
-        default="/mnt/petrelfs/share_data/llama2_hf/llama-2-7b-hf",
+        default="share_data/llama2_hf/llama-2-7b-hf",
         metadata={
             "help": (
                 "The model checkpoint for weights initialization.Don't set if you want to train a model from scratch."
@@ -61,7 +61,7 @@ class DataArguments:
         default=None,
         metadata={"help": "Path to the training data."})
     cache_dir: Optional[str] = field(
-        default="/mnt/petrelfs/zhanjun.p/mllm/data/both_cache",
+        default="mllm/data/both_cache",
         metadata={"help": "Where do you want to store the tokenized data"},
     )
     max_train_samples: Optional[int] = field(
