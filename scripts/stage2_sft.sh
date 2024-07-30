@@ -21,8 +21,8 @@ create_cache_directories() {
     done
 }
 
-mmi_datasets="${DATAROOT}/instruction/mmichat_speech.jsonl
-${DATAROOT}/instruction/mmichat_text.jsonl"
+mmi_datasets="${DATAROOT}/instruction/anyinstruct_speech.jsonl
+${DATAROOT}/instruction/anyinstruct_text.jsonl"
 for dataset in $mmi_datasets
 do 
     create_cache_directories "$dataset"
