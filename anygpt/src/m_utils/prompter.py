@@ -28,7 +28,6 @@ task_prompts = {
     'Speech-Response': "<-Ins-> {instruction}\n <-Res-> {response}",
     
     'Text-Response': '{text_output}',
-    
     'Text-to-Speech': '{caption} Please read the given text.',
     'Speech-to-Text': '{speech} Please transcribe the given speech.',
     'Text-to-Music': '{caption} Please compose a piece of music from the given text.',
@@ -36,9 +35,7 @@ task_prompts = {
     'Image-to-Text Caption': '{image} Please describe the picture briefly.',
     'Text-to-Image Generation': '{caption} Please generation an image.',
     
-    'Speech-Instruction2': '{speech} Please acknowledge the user\'s vocal input, create a textual response',
     'Text-Instruction': '{text_input} Please interpret the user\'s text input, create a textual response.',
-    'Text-Instruction2': '{text_input} Please interpret the user\'s text input, create a textual response, and subsequently produce a corresponding voice reply.',
     'Text-Text-Response': '{text_input}<eot>\n{text_output}',
     'Text-Speech-Response': '{text_output}\n{speech_output}',
     'Speech-Instruction-Speech': '{speech} Please interpret the user\'s voice commands, provide text responses, and generate corresponding voice replies',
