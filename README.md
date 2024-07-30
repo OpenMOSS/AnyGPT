@@ -161,9 +161,9 @@ Please refer to ``scripts/stage1_pretrain.sh`` and ``scripts/stage2_sft.sh``
 
 We provide training data samples for reference. The organization of training formats includes pre-training data in [data/pretrain](https://github.com/OpenMOSS/AnyGPT/tree/main/data/pretrain) and instruction data in [data/instruction](https://github.com/OpenMOSS/AnyGPT/tree/main/data/instruction).
 For prompts of different tasks, refer to [task_prompts](https://github.com/OpenMOSS/AnyGPT/blob/16210f829d3b1aa25b0057ebbab0a78057fb59b5/anygpt/src/m_utils/prompter.py#L19), such as plain text dialogue, voice command text reply, text command voice reply, and special prompts for various tasks. You need to process multi-modal data into multi-round dialogue format according to the task template in advance.
-We use a voice conversation as an example in the coßmmand data:
+We use a voice conversation as an example in the command data, corresponding to the use of task_prompts in the "Speech-Instruction" and "Speech-Response":
 
-> user: voice command - voice conversation prompt  
+> user: voice command - voice conversation prompt
 > assistant: text command - text/multimodal response - voice response
 
 ## Acknowledgements
