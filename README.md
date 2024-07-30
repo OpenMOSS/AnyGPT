@@ -171,7 +171,7 @@ We use a voice conversation as an example in the command data, corresponding to 
     },
     {
         "role": "assistant",
-        "message": "<-Ins-> hello, how are you\n <-Res-> I am fine, thank you <sosp><🗣️2><🗣️2><🗣️2><eosp> "
+        "message": "<-Ins-> hello, how are you\n <-Res-> I am fine, thank you <sosp><🗣️2><🗣️2><🗣️2><eosp>"
     }
 ]
 ```
