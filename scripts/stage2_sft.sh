@@ -31,7 +31,6 @@ done
 #ddp realted
 NNODE=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | wc -l)
 MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
-# NODE_RANK=$(($(scontrol show hostnames "$SLURM_JOB_NODELIST" | grep -Fn $(hostname) | cut --delimiter=":" --fields=1)-1))
 NODE_RANK=$(($(scontrol show hostnames "$SLURM_JOB_NODELIST" | grep -m 1 -Fn $(hostname) | cut -d ":" -f1)-1))
 
 echo "stage2: multimodal interleaved surpervised fineturning"

@@ -76,7 +76,6 @@ class Prompter(object):
                 return instruction
             elif question_type_id == 26:
                 return f"{image_list[0]} {image_list[1]} {image_list[2]} {image_list[3]} {image_list[4]} {image_list[5]} {image_list[6]} What will happen next?"
-                return f"The first Image: {image_list[0]}. The second Image: {image_list[1]}. The third Image: {image_list[2]}. The fourth Image: {image_list[3]}. The fifth Image: {image_list[4]}. The sixth Image: {image_list[5]}. The seventh Image: {image_list[6]}. What will happen next?"
             elif question_type_id == 27:
                 return instruction
             else:
