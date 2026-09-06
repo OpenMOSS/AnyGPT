@@ -1,4 +1,8 @@
-# Official Repository for paper "AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling"
+# AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling
+
+**A multimodal language model for text, speech, images, and music, with released base and chat weights, inference code, and the AnyInstruct dataset.**
+
+**Start here:** [Run inference](#inference) · [Model weights](#model-weights) · [Demo and project page](https://junzhan2000.github.io/AnyGPT.github.io/) · [AnyInstruct dataset](https://huggingface.co/datasets/fnlp/AnyInstruct) · [Citation](#citation)
 
 <a href="https://junzhan2000.github.io/AnyGPT.github.io/">
   <img src="https://img.shields.io/badge/Project-Page-Green" alt="Project Page Badge">
@@ -6,7 +10,7 @@
 <a href="https://arxiv.org/pdf/2402.12226.pdf">
   <img src="https://img.shields.io/badge/Paper-Arxiv-red" alt="Paper Arxiv Badge">
 </a>
-<a href="https://arxiv.org/pdf/2402.12226.pdf">
+<a href="https://huggingface.co/datasets/fnlp/AnyInstruct">
   <img src="https://img.shields.io/badge/Datasets-AnyInstruct-yellow" alt="Datasets">
 </a>
 
