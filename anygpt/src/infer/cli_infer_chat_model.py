@@ -420,6 +420,8 @@ if __name__=='__main__':
         args.model_name_or_path,
         args.image_tokenizer_path,
         args.output_dir,
+        speech_tokenizer_config=args.speech_tokenizer_config,
+        speech_tokenizer_path=args.speech_tokenizer_path,
         soundstorm_path=args.soundstorm_path
     )
 
